@@ -86,9 +86,7 @@
 
     loadStoryBtn.addEventListener('click', async () => {
       try {
-        const response = await fetch('storyಸ
-
-        story.txt');
+        const response = await fetch('story.txt');
         if (!response.ok) {
           throw new Error('Failed to load story text');
         }
