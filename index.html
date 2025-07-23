@@ -13,7 +13,6 @@
 </head>
 <body class="bg-gray-100">
   <div class="container mx-auto p-6">
-    <!-- 标题和简介 -->
     <header class="text-center mb-8">
       <h1 class="text-4xl font-bold text-gray-800 mb-4">Bring Your Own Story: Generating Interactive Visual Novels with AI</h1>
       <p class="text-lg text-gray-600">
@@ -21,28 +20,26 @@
       </p>
     </header>
 
-    <!-- 视频展示区域 -->
     <section class="mb-12">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Video Demonstrations</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- 假设有三个视频，路径为 videos/video1.mp4, videos/video2.mp4, videos/video3.mp4 -->
         <div class="bg-white rounded-lg shadow-lg p-4">
-          <video controls class="w-full rounded">
-            <source src="video/video1.mp4" type="video/mp4">
+          <video controls preload="metadata" class="w-full rounded">
+            <source src="Video/Video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <p class="text-center text-gray-600 mt-2">Demo Video 1</p>
         </div>
         <div class="bg-white rounded-lg shadow-lg p-4">
-          <video controls class="w-full rounded">
-            <source src="video/video2.mp4" type="video/mp4">
+          <video controls preload="metadata" class="w-full rounded">
+            <source src="Video/Video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <p class="text-center text-gray-600 mt-2">Demo Video 2</p>
         </div>
         <div class="bg-white rounded-lg shadow-lg p-4">
-          <video controls class="w-full rounded">
-            <source src="video/video3.mp4" type="video/mp4">
+          <video controls preload="metadata" class="w-full rounded">
+            <source src="Video/Video3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <p class="text-center text-gray-600 mt-2">Demo Video 3</p>
@@ -50,7 +47,6 @@
       </div>
     </section>
 
-    <!-- 故事文本区域 -->
     <section>
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Original Story Text</h2>
       <button id="loadStoryBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
@@ -63,15 +59,12 @@
   </div>
 
   <script>
-    // 获取按钮和文本展示区域
     const loadStoryBtn = document.getElementById('loadStoryBtn');
     const storyTextDiv = document.getElementById('storyText');
     const storyContent = document.getElementById('storyContent');
 
-    // 按钮点击事件：加载故事文本
     loadStoryBtn.addEventListener('click', async () => {
       try {
-        // 假设故事文本文件位于 story.txt
         const response = await fetch('story.txt');
         if (!response.ok) {
           throw new Error('Failed to load story text');
